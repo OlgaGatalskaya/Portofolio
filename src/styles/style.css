@@ -1,0 +1,180 @@
+@import './variables.css';
+@import './header.css';
+@import './promo.css';
+@import './about.css';
+@import './aside.css';
+@import './expirience.css';
+@import './programming-skills.css';
+@import './works.css';
+@import './contacts.css';
+
+* {
+    /*font-family: 'IBM Plex Mono', monospace;*/
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+    width:100%;
+    height: 100%;
+    position: relative;
+    color: var(--white-color);
+    /*line-height: 1.4;*/
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+}
+
+.element{
+    display: block;
+    width: 30px;
+    height: 30px;
+    
+    border-radius: 50%;
+    box-shadow: inset -100px 10px 80px 20px transparent,
+    0 0 10px 0px var(--orange2-color);
+    transform: translateY(-50%) translateX(-50%); /* центрируем кружок */
+    position: absolute; /* задаём абсолютное позиционирование, чтобы элемент не влиял на остальные элементы и его можно было бы позиционировать следом за курсором */
+    z-index: 999; /* чтобы элемент был над остальными элементами */
+    pointer-events: none; /* чтобы сквозь элемент можно было взаимодействовать с элементами, находящимися под ним */
+    transition: width 0.64s, height 0.64s, border-radius 0.64s, background 0.64s;
+}
+.element_active{
+    height: 80px;
+    width: 80px;
+    border-width: 2px;
+    border: none;
+    box-shadow: inset -100px 10px 80px 20px transparent,
+    0 0 20px 10px rgba(20, 245, 234, 0.54);
+    /*background: rgba(13,110,253,0.32);*/
+}
+
+/*@media (max-width: 991.98px) {
+    .element {
+    display: none;
+    }
+}*/
+
+.orange-circle::before{
+    content: '';
+    border-radius: 50%;
+    background-color: var(--orange2-color);
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    z-index: -1;
+    top: -6px;
+    left: 1px;
+}
+
+.title {
+    font-size: 35px;
+    position: relative;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 24px;
+    position: relative;
+    margin-bottom: 18px;
+    text-align: center;
+    color: var(--orange2-color);
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.dot {
+    color: var(--orange2-color);
+    font-weight: 700;
+}
+
+.delimiter::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 10%;
+    height: 2px;
+    background-color: var(--orange2-color);
+    left: 45%;
+    top: 50px;
+}
+
+
+
+
+@media (max-width: 1200px){
+    .container{
+        width: 1140px;
+    }
+}
+
+@media (max-width: 1199px){
+    .container{
+        width: 960px;
+    }
+}
+
+@media (max-width: 991px){
+
+    .container {
+        width: 720px;
+    }
+
+    .title {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 767px){
+    .container{
+        width: 540px;
+    }    
+    .delimiter::after{
+        width: 0%;
+        height: 0px;
+    }
+    .title {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 575px){
+    .container{
+        width: 100%;
+    }
+}
